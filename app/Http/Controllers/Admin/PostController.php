@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -28,7 +29,7 @@ class PostController extends Controller
         $post = new Post;
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['slug'];
+        $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
         $post->yt_iframe = $data['yt_iframe'];
         $post->meta_title = $data['meta_title'];
@@ -52,7 +53,7 @@ class PostController extends Controller
         $post = Post::find($post_id);
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['slug'];
+        $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
         $post->yt_iframe = $data['yt_iframe'];
         $post->meta_title = $data['meta_title'];
@@ -61,12 +62,12 @@ class PostController extends Controller
         $post->status = $request->status == true ? '1' : '0';
         $post->created_by = Auth::user()->id;
         $post->update();
-        return redirect('admin/post')->with('message', 'post Updated Successfully');
+        return redirect('admin/post')->with('message', 'Post Updated Successfully');
     }
     public function destroy($post_id)
     {
         $post = Post::find($post_id);
         $post->delete();
-        return redirect('admin/post')->with('message', 'post Deleted Succesfully');
+        return redirect('admin/post')->with('message', 'Post Deleted Succesfully');
     }
 }

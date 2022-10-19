@@ -64,7 +64,7 @@
                         <input type="checkbox" name="status" />
                     </div>
                     <div class=col-mb-6>
-                        <button type="submit" class="btn btn-primary">Save Category</button>
+                        <button type="submit" class="btn btn-primary">Save Post</button>
                     </div>
 
                 </div>
