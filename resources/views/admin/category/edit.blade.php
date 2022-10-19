@@ -4,7 +4,7 @@
 <div class="container-fluid px-4">
     <div class="card mt-4">
         <div class="card-header">
-            <h4 class="mt-4">Add Category</h4>
+            <h4 class="mt-4">Edit Category</h4>
         </div>
 
         <div class="card-body">
@@ -60,7 +60,7 @@
                         <input type="checkbox" name="status" {{$category->status == '1'? 'checked':''}} />
                     </div>
                     <div class=col-mb-6>
-                        <button type="submit" class="btn btn-primary">Upadte Category</button>
+                        <button type="submit" class="btn btn-primary">Update Category</button>
                     </div>
 
                 </div>

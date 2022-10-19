@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Category')
+@section('title','View Category')
 @section('content')
 
 <div class="container-fluid px-4">

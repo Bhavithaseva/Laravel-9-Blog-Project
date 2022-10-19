@@ -1,13 +1,13 @@
 @extends('layouts.master')
-@section('title','Post')
+@section('title','View Users')
 @section('content')
 
 <div class="container-fluid px-4">
 
     <div class="card mt-4">
         <div class="card-header">
-            <h4>View Post
-                <a href="{{url('admin/add-post')}}" class="btn btn-primary btn-sm float-end"> Add Post</a>
+            <h4>View Users
+                
             </h4>
         </div>
         <div class="card-body">
@@ -34,7 +34,7 @@
                         <td>{{$item->email}}</td>
                         <td>{{$item->role_as=='1'? 'Admin':'User'}}</td>
                         <td>
-                            <a href="{{url('admin/edit-user/'.$item->id)}}" class="btn btn-success"> Edit</a>
+                            <a href="{{url('admin/user/'.$item->id)}}" class="btn btn-success"> Edit</a>
                            
                         </td>
                     </tr>

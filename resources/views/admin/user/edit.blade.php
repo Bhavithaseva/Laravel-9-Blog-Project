@@ -1,77 +1,46 @@
 @extends('layouts.master')
-@section('title','Update Post')
+@section('title','Update User')
 @section('content')
 <div class="container-fluid px-4">
     <div class="card mt-4">
         <div class="card-header">
-            <h4 class="mt-4">Edit Post</h4>
+            <h4 class="mt-4">Edit User</h4>
+            
+                <a href="{{url('admin/users')}}" class="btn btn-danger btn-sm float-end">Back</a>
+            
         </div>
 
         <div class="card-body">
-            @if($errors->any())
-            <div class="alert alert-danger">
-                @foreach ($errors->all() as $error )
-                <div>{{$error}}</div>
-                @endforeach
-            </div>
-            @endif
 
-            <form action="{{url('admin/update-post/'.$post->id)}}" method="POST">
-                @csrf
-                @method('PUT')
                 <div class=mb-3>
-                    <label>Category</label>
-                    <select name="category_id" class="form-control">
-                        <option value="">--Select Category--</option>
-                        @foreach($category as $cateitem)
-                        <option value="{{$cateitem->id}}" {{ $post->category_id==$cateitem->id?'selected':''}}>
-                            {{$cateitem->name}}
-                        </option>
-                        @endforeach
-                    </select>
+                    <label>Full Name</label>
+                   <p class="form-control">{{$user->name}}</p>
                 </div>
                 <div class=mb-3>
-                    <label>Post Name</label>
-                    <input type="text" name="name" value="{{$post->name}}" class="form-control" />
+                    <label>Email Id</label>
+                    <p class="form-control">{{$user->email}}</p>
                 </div>
                 <div class=mb-3>
-                    <label>Slug</label>
-                    <input type="text" name="slug" value="{{$post->slug}}" class="form-control" />
+                    <label>Created At</label>
+                    <p class="form-control">{{$user->created_at->format('d/m/Y')}}</p>
                 </div>
-                <div class=mb-3>
-                    <label>Description</label>
-                    <textarea type="text" name="description" id="your_summernote" rows="5" class="form-control">{{$post->description}}</textarea>
-                </div>
-                <div class=mb-3>
-                    <label>Youtube Iframe Link</label>
-                    <input type="text" name="yt_iframe" value="{{$post->yt_iframe}}" class="form-control" />
-                </div>
+                <form action="{{url('admin/update-user/'.$user->id)}}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class=mb-3>
+                        <label>Role as</label>
+                       <select name="role_as" class="form-control">
+                        <option value="1" {{$user->role_as=='1'? 'selected':''}}>Admin</option>
+                        <option value="0" {{$user->role_as=='0'? 'selected':''}}>User</option>
+                        <option value="2" {{$user->role_as=='2'? 'selected':''}}>Blogger</option> 
+                       </select>
 
-                <h4>SEO Tags</h4>
-                <div class=mb-3>
-                    <label>Meta Title</label>
-                    <input type="text" name="meta_title" value="{{$post->meta_title}}" class="form-control" />
-                </div>
-                <div class=mb-3>
-                    <label>Meta Description</label>
-                    <textarea name="meta_description" rows="5" class="form-control">{{$post->meta_description}}</textarea>
-                </div>
-                <div class=mb-3>
-                    <label>Meta Keyword</label>
-                    <input name="meta_keyword" value="{{$post->meta_keyword}}" class="form-control" />
-                </div>
-                <h4>Status </h4>
-                <div class="row">
-
-                    <div class="col-md-3 mb-3">
-                        <label>Status</label>
-                        <input type="checkbox" name="status" {{$post->status == '1'? 'checked':''}} />
                     </div>
-                    <div class=col-mb-6>
-                        <button type="submit" class="btn btn-primary">Update Post</button>
+                    <div class=mb-3>
+                        <button type="submit" class="btn btn-primary">Update User</button>
                     </div>
 
-                </div>
+
 
             </form>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Category')
+@section('title','Add Category')
 @section('content')
 <div class="container-fluid px-4">
     <div class="card mt-4">
