@@ -35,8 +35,6 @@
                         <td>{{$item->status=='1'? 'Hidden':'Visible'}}</td>
                         <td>
                             <a href="{{url('admin/edit-post/'.$item->id)}}" class="btn btn-success"> Edit</a>
-
-
                             <a href="{{url('admin/destroy-post/'.$item->id)}}" class="btn btn-danger"> Delete</a>
                         </td>
                     </tr>

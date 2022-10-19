@@ -29,7 +29,7 @@
                 </div>
                 <div class=mb-3>
                     <label>Description</label>
-                    <textarea type="text" name="description" rows="5" class="form-control">{{$category->slug}}</textarea>
+                    <textarea type="text" name="description" rows="5" class="form-control">{{$category->description}}</textarea>
                 </div>
                 <div class=mb-3>
                     <label>Image</label>
@@ -60,7 +60,7 @@
                         <input type="checkbox" name="status" {{$category->status == '1'? 'checked':''}} />
                     </div>
                     <div class=col-mb-6>
-                        <button type="submit" class="btn btn-primary">Save Category</button>
+                        <button type="submit" class="btn btn-primary">Upadte Category</button>
                     </div>
 
                 </div>
