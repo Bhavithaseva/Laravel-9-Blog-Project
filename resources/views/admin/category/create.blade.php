@@ -28,7 +28,7 @@
                 </div>
                 <div class=mb-3>
                     <label>Description</label>
-                    <input type="text" name="description" rows="5" class="form-control" />
+                    <textarea type="text" name="description" rows="5" class="form-control"></textarea>
                 </div>
                 <div class=mb-3>
                     <label>Image</label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class=mb-3>
                     <label>Meta Description</label>
-                    <input name="meta_description" rows="5" class="form-control" />
+                    <textarea name="meta_description" rows="5" class="form-control"></textarea>
                 </div>
                 <div class=mb-3>
                     <label>Meta Keyword</label>

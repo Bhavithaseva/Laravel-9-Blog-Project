@@ -22,7 +22,7 @@
                         <th>Category Name</th>
                         <th>Image</th>
                         <th>Status</th>
-                        <th>Edit</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
@@ -36,7 +36,10 @@
                         </td>
                         <td>{{$item->status=='1'? 'Hidden':'Shown'}}</td>
                         <td>
-                            <a href="" class="btn btn-success"> Edit</a>
+                            <a href="{{url('admin/edit-category/'.$item->id)}}" class="btn btn-success"> Edit</a>
+
+
+                            <a href="{{url('admin/destroy-category/'.$item->id)}}" class="btn btn-danger"> Delete</a>
                         </td>
                     </tr>
                     @endforeach
