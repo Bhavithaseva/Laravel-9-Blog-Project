@@ -32,6 +32,7 @@
         <main class="">
             @yield('content')
         </main>
+        @include('layouts.inc.frontend-footer')
     </div>
 
 
@@ -53,7 +54,7 @@
                 items: 3
             },
             1000: {
-                items: 4
+                items: 3
             }
         }
     })
