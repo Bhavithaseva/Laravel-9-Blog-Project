@@ -9,16 +9,17 @@
                 </div>
 
                 @forelse ($post as $postitem)
-             
+
                 <div class="card card-shadow mt-4">
                     <div class="card-body">
                         <a href="{{url('tutorial/'.$category->slug.'/'.$postitem->slug)}}" class="text-decoration-none">
-                        <h2 class="post-heading">{{$postitem->name}}</h2>
+                            <h2 class="post-heading">{{$postitem->name}}</h2>
                         </a>
                         <h6>Posted On: {{$postitem->created_at->format('d-m-y')}}</h6>
                         <span class="ms-3">Posted On: {{$postitem->user->name}}</span>
                     </div>
                 </div>
+
                 @empty
                 <div class="card card-shadow mt-4">
                     <div class="card-body">
@@ -27,11 +28,15 @@
 
                 </div>
                 @endforelse
+
+                <div class="your-paginate">
+                    {{$post->links()}}
+                </div>
             </div>
             <div class="col-md-3">
-               <div class="border p-2">
-                 <h4>Advertising Area</h4>
-               </div>
+                <div class="border p-2">
+                    <h4>Advertising Area</h4>
+                </div>
             </div>
         </div>
     </div>
