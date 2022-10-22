@@ -38,37 +38,39 @@
             @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Category Name</th>
+                            <th>Image</th>
+                            <th>Status</th>
+                            <th>Action</th>
 
-            <table id="myTable" class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Category Name</th>
-                        <th>Image</th>
-                        <th>Status</th>
-                        <th>Action</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($category as $item)
-                    <tr>
-                        <td>{{$item->id}}</td>
-                        <td>{{$item->name}}</td>
-                        <td>{{$item->image}}
-                            <img src="{{asset('uploads/category/'.$item->image)}}" width="50px" height="50px" alt="Img">
-                        </td>
-                        <td>{{$item->status=='1'? 'Hidden':'Shown'}}</td>
-                        <td>
-                            <a href="{{url('admin/edit-category/'.$item->id)}}" class="btn btn-success"> Edit</a>
-                            <!-- <a href="{{url('admin/destroy-category/'.$item->id)}}" class="btn btn-danger"> Delete</a> -->
-                            <button type="button" class="btn btn-danger deleteCategoryBtn"
-                                value="{{$item->id}}">Delete</button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($category as $item)
+                        <tr>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->image}}
+                                <img src="{{asset('uploads/category/'.$item->image)}}" width="50px" height="50px"
+                                    alt="Img">
+                            </td>
+                            <td>{{$item->status=='1'? 'Hidden':'Shown'}}</td>
+                            <td>
+                                <a href="{{url('admin/edit-category/'.$item->id)}}" class="btn btn-success"> Edit</a>
+                                <!-- <a href="{{url('admin/destroy-category/'.$item->id)}}" class="btn btn-danger"> Delete</a> -->
+                                <button type="button" class="btn btn-danger deleteCategoryBtn"
+                                    value="{{$item->id}}">Delete</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

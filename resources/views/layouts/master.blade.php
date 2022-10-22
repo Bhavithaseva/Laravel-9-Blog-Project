@@ -23,16 +23,30 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
     <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
-     <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<style>
-    .dataTables_wrapper .dataTables_pagination .pagination_button{
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+    .dataTables_wrapper .dataTables_pagination .pagination_button {
         padding: 0px !important;
         margin: 0px !important;
     }
-    div.dataTables_wrapper div.dataTables_length select{
-        width:50% !important;
+
+    div.dataTables_wrapper div.dataTables_length select {
+        width: 50% !important;
     }
-</style>
+
+    .post-code-bg {
+        width: fit-content;
+        min-width: 100%;
+        background-color: #212121 !important;
+        width: 100% !important;
+        overflow-x: scroll !important;
+        position: relative;
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+    </style>
 </head>
 
 <body>
@@ -56,19 +70,19 @@
     <!-- Summernote JS CDN Link: -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#your_summernote").summernote({
-                height: 150,
-            });
-            $('.dropdown-toggle').dropdown();
+    $(document).ready(function() {
+        $("#your_summernote").summernote({
+            height: 150,
         });
+        $('.dropdown-toggle').dropdown();
+    });
     </script>
-     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-     <script>
-     $(document).ready( function () {
-         $('#myTable').DataTable();
-    } ); 
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
     </script>
     @yield('scripts')
 </body>
