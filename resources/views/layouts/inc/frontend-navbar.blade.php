@@ -2,7 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 d-none d-sm-none d-md-inline">
-                <img src="{{asset('images/logo.jpg')}}" class="w-50" alt="Logo" />
+                @php
+                $setting =App\Models\Setting::find(1);
+                @endphp
+                @if($setting)
+                <img src="{{asset('uploads/settings/'.$setting->logo)}}" class="w-100" alt="Logo" />
+                @endif
             </div>
 
             <div class="col-md-9 my-auto">

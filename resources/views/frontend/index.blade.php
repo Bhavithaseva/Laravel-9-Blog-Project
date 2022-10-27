@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title',"trendsoft tech")
-@section('meta_description',"trendsoft tech")
-@section('meta_keyword',"trendsoft tech")
+@section('title',"$setting->meta_title")
+@section('meta_description',"$setting->meta_description")
+@section('meta_keyword',"$setting->meta_keyword")
 
 @section('content')
 
